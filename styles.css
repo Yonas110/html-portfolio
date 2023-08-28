@@ -1,0 +1,213 @@
+/* Add Google Fornts */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital@1&family=Oswald:wght@200;400&display=swap');
+/* All Class using same detaset*/
+:root{
+    /* Define Variables*/
+    --accent : #f00000; /* Button Color from Figma */
+    --accentHower : #c1bfbf; /* Mouse Hover -> Light */
+    --dark60 : rgba(219, 130, 241, 0.603); /* 0.6 = 60% */
+    --light : #ffffff;
+    --transition : all 0.3s ease 0s /* Define delay time */
+
+}
+/* All Section*/
+*{
+    /* Clear margin and padding*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+html, body{
+    height: 100%; /* Fixed Height using Scroll */
+    overflow: auto;
+}
+
+body{
+    /* Gradient Shade of Color */
+    /*background: linear-gradient(
+        var(--dark60), var(--dark60)
+    ),
+    url(image/pexels-photo-6424244\ 1.jpg);*/
+    background-image: url("image/pexels-photo-6424244\ 1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Fixed Scale */
+    
+}
+
+a, button, p{
+    font-family: "Oswald", sans-serif;
+    color: var(--light);
+}
+
+a, button, .logo{
+    cursor: pointer; /* Link Element logo & Button --> Hand Cursor */
+}
+
+main{
+    height: 100;
+    display: grid; /* Work om gird */
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px))
+    minmax(60px, 1fr);
+}
+
+header{
+    grid-column: 1 / span 7; /* header start 2nd col and others last colimn */
+    margin-left:5% ;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+/* Class */
+.links{
+    margin-left: auto;
+}
+
+.links a, .links button{
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: var(--transition); /* Action */
+}
+
+.links a{
+    margin-right: 20px;
+}
+
+.links a:hover{
+    color: var(--accentHower); /* Cursor Hover --> Change Color */
+}
+
+.button_med{
+    border: none;
+    background-color: var(--accent);
+    padding: 5px 40px;
+    transition: var(--transition);
+}
+
+.button_med:hover{
+    color: var(--accentHower);
+}
+
+.info{
+    grid-column: 3/ span 4;
+    margin-top: 17%;
+    text-align: center;
+}
+
+.content_font1{
+    font-family: "Oswald", sans-serif;
+    color: black;
+    font-size: 3.5rem;
+}
+
+.content_font2{
+    font-family: "Oswald", sans-serif;
+    color: var(--light);
+    font-size: 1.5rem;
+}
+
+.icons{
+    margin-top: 5%;
+    display:inline-flex; 
+    text-align: center;
+}
+
+.icon{
+    margin-right: 40px;
+}
+
+.icon img{
+    width: 60px;
+    height: 60px;
+
+}
+
+.icon_info{
+    text-align: center;
+    
+}
+
+.features{
+    grid-column: 2 / span 7;
+    background-color:yellow;
+    margin-top: 8%;
+    /* top right botton left*/
+    padding: 20px 10px;
+    align-items: left;
+}
+
+.feature{
+    display:flex;
+    margin: 0px 10px 0px 10px;
+}
+
+.feature img{
+    width: 170px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.feature_info p{
+    color: black;
+}
+
+.feature_top, .feature_more{
+    font-size:20px;
+    font-weight:bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.feature_botton{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/*ชักใย feature ตัวที่ 3 */ 
+.feature:nth-child(3){
+    align-self:flex-start;
+}
+
+.feature_more{
+    cursor: pointer; 
+    transition: var(--transition);
+}
+
+.feature_more:hover{
+    color: var(--accentHower);
+}
+
+/* Responsive Website */
+@media only screen and (max-width:1100px){
+    .icon img{
+        height: 100px;
+        width: auto;
+    }
+    .content_font1, .content_font2{
+        font-size: 2.75rem;
+    }
+    .feature{
+        grid-column: 1 / span 7;
+    }  
+}
+
+@media only screen and (max-width:850px){
+    .info{
+        grid-column: 2 / span7;
+    }
+    .icons{
+        flex-direction: column;
+    }
+    .content_font1, .content_font2{
+        font-size: 1.75rem;
+    }
+    .features{
+        flex-direction: column-reverse;
+    }
+}
